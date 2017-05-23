@@ -1,0 +1,9 @@
+[package]
+name = "rusty_13_ways_of_looking_at_a_turtle"
+version = "0.1.0"
+description = "Thirteen different ways of implementing a LOGO-style turtle in Rust"
+repository = "https://github.com/shybyte/rusty-13-ways-of-looking-at-a-turtle"
+license = "MIT"
+authors = ["shybyte@gmail.com"]
+
+[dependencies]
