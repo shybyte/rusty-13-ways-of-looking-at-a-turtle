@@ -1,12 +1,16 @@
 use std::f64::consts::PI;
 
-type Distance = f64;
-type Angle = f64;
+pub type Distance = f64;
+pub type Angle = f64;
 
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub enum PenState {
     Up,
     Down
+}
+
+impl Default for PenState {
+    fn default() -> PenState { PenState::Down }
 }
 
 #[derive(Debug, Copy, Clone)]
@@ -16,7 +20,11 @@ pub enum PenColor {
     Blue
 }
 
-#[derive(Debug, Copy, Clone)]
+impl Default for PenColor {
+    fn default() -> PenColor { PenColor::Black }
+}
+
+#[derive(Debug, Copy, Clone, Default)]
 pub struct Position {
     x: f64,
     y: f64
@@ -36,16 +44,14 @@ pub fn calc_new_position(distance: Distance, angle: Angle, current_pos: Position
 }
 
 pub fn initial_position() -> Position {
-    Position { x: 0.0, y: 0.0 }
+    Default::default()
 }
 
 pub fn initial_color() -> PenColor {
-    PenColor::Black
+    Default::default()
 }
 
-pub fn initial_pen_state() -> PenState {
-    PenState::Down
-}
+pub fn initial_pen_state() -> PenState { Default::default() }
 
 /// Emulating a real implementation for drawing a line
 pub fn dummy_draw_line(log: fn(String), old_pos: Position, new_pos: Position, color: PenColor) {
@@ -56,3 +62,7 @@ pub fn trim_string(s: &str) -> String {
     s.trim().to_string()
 }
 
+
+pub fn log<S: Into<String>>(text: S)  {
+    println!("{:}", text.into());
+}
