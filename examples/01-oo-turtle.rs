@@ -1,12 +1,13 @@
 extern crate rusty_13_ways_of_looking_at_a_turtle;
 
 use rusty_13_ways_of_looking_at_a_turtle::oo_turtle::Turtle;
+use rusty_13_ways_of_looking_at_a_turtle::common::log;
 use rusty_13_ways_of_looking_at_a_turtle::common::PenColor::*;
 
 fn draw_triangle() {
     println!("Start drawing triangle");
 
-    let mut turtle = Turtle::new();
+    let mut turtle = Turtle::new(log);
     turtle.move_forward(100.0);
     turtle.turn(120.0);
     turtle.move_forward(100.0);
@@ -20,7 +21,7 @@ fn draw_triangle() {
 fn draw_three_lines() {
     println!("Start drawing 3 lines");
 
-    let mut turtle = Turtle::new();
+    let mut turtle = Turtle::new(log);
 
     // draw black line
     turtle.pen_down();
@@ -62,7 +63,7 @@ fn draw_polygon(n: usize) {
     println!("Start drawing polygon");
 
     let angle = 180.0 - (360.0/n as f64);
-    let mut turtle = Turtle::new();
+    let mut turtle = Turtle::new(log);
 
     for _ in 0..n {
         turtle.move_forward(100.0);
