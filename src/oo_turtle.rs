@@ -28,4 +28,19 @@ impl Turtle {
         let new_angle = (self.current_angle + angle) % 360.0;
         self.current_angle = new_angle;
     }
+
+    pub fn pen_up(&mut self) {
+        log("Pen up");
+        self.current_pen_state = PenState::Up;
+    }
+
+    pub fn pen_down(&mut self) {
+        log("Pen down");
+        self.current_pen_state = PenState::Down;
+    }
+
+    pub fn set_color(&mut self, color: PenColor) {
+        log(format!("SetColor {:?}", color));
+        self.current_color = color;
+    }
 }
