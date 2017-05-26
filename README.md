@@ -23,7 +23,7 @@ This [common code](src/common.rs) is used from all implementations.
 
 #### 3. API (string commands) with an object-oriented core
 
-* [OO API Turtle](examples/03-api-oo-core.rs) 
+* [API-OO-Core](examples/03-api-oo-core.rs) 
 
 ## License
 
