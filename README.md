@@ -12,13 +12,13 @@ This [common code](src/common.rs) is used from all implementations.
 
 #### 1. Basic OO -- Class with mutable state
 
-* [Example Turtle Usage](examples/01-oo-turtle.rs) 
-* [Example Turtle](src/oo_turtle.rs) 
+* [OO Turtle Client](examples/01-oo-turtle.rs) 
+* [OO Turtle](src/oo_turtle.rs) 
 
 #### 2. Basic FP -- Module of functions with immutable state
 
-* [Example Turtle Usage](examples/02-fp-turtle.rs) 
-* [Example Turtle](src/fp_turtle.rs) 
+* [FP Turtle Client](examples/02-fp-turtle.rs) 
+* [FP Turtle](src/fp_turtle.rs) 
 * [FP Utils](src/fp_utils.rs) 
 
 ## License
